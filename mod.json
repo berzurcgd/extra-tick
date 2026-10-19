@@ -1,0 +1,60 @@
+{
+	"geode": "5.0.0",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "berzurc.extra-tick",
+	"name": "Extra Tick",
+	"version": "v1.0.0",
+	"developer": "Cruz",
+	"description": "Widens the timing window of a click to up to 4 physics ticks, so frame-perfect inputs are easier to practice. Includes a status window and a toggle hotkey (Windows).",
+	"tags": ["gameplay", "utility"],
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Enable Extra Tick",
+			"description": "Master switch. Also flipped by the toggle hotkey while GD is focused (Windows).",
+			"default": true
+		},
+		"tick-window": {
+			"type": "int",
+			"name": "Tick Window Size",
+			"description": "Total number of physics ticks a click stays live, including the tick it happened on. <cy>1</c> = vanilla behaviour, <cy>4</c> = the click is re-applied for 3 extra ticks.",
+			"default": 2,
+			"min": 1,
+			"max": 4,
+			"control": {
+				"slider": true,
+				"arrows": true
+			}
+		},
+		"toggle-key": {
+			"type": "string",
+			"name": "Toggle Hotkey",
+			"description": "Key that turns Extra Tick on or off while Geometry Dash is the focused window (Windows only).",
+			"default": "F7",
+			"one-of": ["F6", "F7", "F8", "F9", "F10", "Insert", "Home", "End", "PageUp", "PageDown", "Pause"]
+		},
+		"status-window": {
+			"type": "bool",
+			"name": "Show Status Window",
+			"description": "Shows a small always-on-top window next to the game that says whether Extra Tick is ON or OFF (Windows only). Drag it anywhere. It will not show over exclusive fullscreen; use windowed or borderless.",
+			"default": true
+		},
+		"practice-only": {
+			"type": "bool",
+			"name": "Practice / Test Mode Only",
+			"description": "When on, assist only runs in Practice Mode or a Startpos test run. When off (default), it also works in normal mode.",
+			"default": false
+		},
+		"debug-log": {
+			"type": "bool",
+			"name": "Debug Logging",
+			"description": "Log every injected tick to the Geode console. Useful when tuning the window or after a GD update.",
+			"default": false
+		}
+	}
+}
